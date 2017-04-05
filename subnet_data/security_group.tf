@@ -2,8 +2,12 @@ variable "vpc_id" {
    default = "vpc-44299320"
 }
 
+data "aws_vpc" "selected" {
+  id = "${var.vpc_id}"
+}
+
 data "aws_subnet" "selected" {
-  vpc_id = "${var.vpc_id}"
+  vpc_id = "${data.aws_vpc.selected.id}"
   filter {
     name   = "tag:Name"
     values = ["my-vpc-subnet-public-ap-southeast-2a"]
