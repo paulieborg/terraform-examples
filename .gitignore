@@ -1,2 +1,4 @@
 terraform.tfstate*
-.terraform/**
+.terraform
+.idea/
+Would skip repository .terraform/modules/bbf8c8ce4234dffb67a96b7a9421e488
