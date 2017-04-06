@@ -5,7 +5,7 @@ data "aws_vpc" "selected" {
 
 }
 
-data "aws_subnet" "privates" {
+data "aws_subnet" "internals" {
   vpc_id = "${data.aws_vpc.selected.id}"
   availability_zone = "${element(split(",", var.availability_zones), count.index)}"
 
@@ -22,7 +22,7 @@ resource "aws_security_group" "subnet" {
 
   ingress {
     cidr_blocks = [
-      "${data.aws_subnet.privates.*.cidr_block}"]
+      "${data.aws_subnet.internals.*.cidr_block}"]
     from_port = 80
     to_port = 80
     protocol = "tcp"
