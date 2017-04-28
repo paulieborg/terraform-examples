@@ -1,0 +1,145 @@
+I, [2017-04-27T03:34:59.603203 #5420]  INFO -- Kitchen: -----> Starting Kitchen (v1.16.0)
+I, [2017-04-27T03:35:00.138255 #5420]  INFO -- Kitchen: -----> Converging <default-ubuntu>...
+E, [2017-04-27T03:35:22.988418 #5420] ERROR -- Kitchen: ------Exception-------
+E, [2017-04-27T03:35:22.988466 #5420] ERROR -- Kitchen: Class: Kitchen::ActionFailed
+E, [2017-04-27T03:35:22.988486 #5420] ERROR -- Kitchen: Message: 1 actions failed.
+>>>>>>     Converge failed on instance <default-ubuntu>.  Please see .kitchen/logs/default-ubuntu.log for more details
+E, [2017-04-27T03:35:22.988507 #5420] ERROR -- Kitchen: ----------------------
+E, [2017-04-27T03:35:22.988523 #5420] ERROR -- Kitchen: ------Backtrace-------
+E, [2017-04-27T03:35:22.988541 #5420] ERROR -- Kitchen: /Users/paul.borg/.rvm/gems/ruby-2.3.1/gems/test-kitchen-1.16.0/lib/kitchen/command.rb:183:in `report_errors'
+E, [2017-04-27T03:35:22.988561 #5420] ERROR -- Kitchen: /Users/paul.borg/.rvm/gems/ruby-2.3.1/gems/test-kitchen-1.16.0/lib/kitchen/command.rb:174:in `run_action'
+E, [2017-04-27T03:35:22.988580 #5420] ERROR -- Kitchen: /Users/paul.borg/.rvm/gems/ruby-2.3.1/gems/test-kitchen-1.16.0/lib/kitchen/command/action.rb:36:in `block in call'
+E, [2017-04-27T03:35:22.988596 #5420] ERROR -- Kitchen: /Users/paul.borg/.rvm/rubies/ruby-2.3.1/lib/ruby/2.3.0/benchmark.rb:293:in `measure'
+E, [2017-04-27T03:35:22.988672 #5420] ERROR -- Kitchen: /Users/paul.borg/.rvm/gems/ruby-2.3.1/gems/test-kitchen-1.16.0/lib/kitchen/command/action.rb:34:in `call'
+E, [2017-04-27T03:35:22.988692 #5420] ERROR -- Kitchen: /Users/paul.borg/.rvm/gems/ruby-2.3.1/gems/test-kitchen-1.16.0/lib/kitchen/cli.rb:53:in `perform'
+E, [2017-04-27T03:35:22.988710 #5420] ERROR -- Kitchen: /Users/paul.borg/.rvm/gems/ruby-2.3.1/gems/test-kitchen-1.16.0/lib/kitchen/cli.rb:187:in `block (2 levels) in <class:CLI>'
+E, [2017-04-27T03:35:22.988728 #5420] ERROR -- Kitchen: /Users/paul.borg/.rvm/gems/ruby-2.3.1/gems/thor-0.19.1/lib/thor/command.rb:27:in `run'
+E, [2017-04-27T03:35:22.988746 #5420] ERROR -- Kitchen: /Users/paul.borg/.rvm/gems/ruby-2.3.1/gems/thor-0.19.1/lib/thor/invocation.rb:126:in `invoke_command'
+E, [2017-04-27T03:35:22.988762 #5420] ERROR -- Kitchen: /Users/paul.borg/.rvm/gems/ruby-2.3.1/gems/test-kitchen-1.16.0/lib/kitchen/cli.rb:334:in `invoke_task'
+E, [2017-04-27T03:35:22.988788 #5420] ERROR -- Kitchen: /Users/paul.borg/.rvm/gems/ruby-2.3.1/gems/thor-0.19.1/lib/thor.rb:359:in `dispatch'
+E, [2017-04-27T03:35:22.988805 #5420] ERROR -- Kitchen: /Users/paul.borg/.rvm/gems/ruby-2.3.1/gems/thor-0.19.1/lib/thor/base.rb:440:in `start'
+E, [2017-04-27T03:35:22.988820 #5420] ERROR -- Kitchen: /Users/paul.borg/.rvm/gems/ruby-2.3.1/gems/test-kitchen-1.16.0/bin/kitchen:13:in `block in <top (required)>'
+E, [2017-04-27T03:35:22.988834 #5420] ERROR -- Kitchen: /Users/paul.borg/.rvm/gems/ruby-2.3.1/gems/test-kitchen-1.16.0/lib/kitchen/errors.rb:171:in `with_friendly_errors'
+E, [2017-04-27T03:35:22.988850 #5420] ERROR -- Kitchen: /Users/paul.borg/.rvm/gems/ruby-2.3.1/gems/test-kitchen-1.16.0/bin/kitchen:13:in `<top (required)>'
+E, [2017-04-27T03:35:22.988866 #5420] ERROR -- Kitchen: /Users/paul.borg/.rvm/gems/ruby-2.3.1/bin/kitchen:23:in `load'
+E, [2017-04-27T03:35:22.988879 #5420] ERROR -- Kitchen: /Users/paul.borg/.rvm/gems/ruby-2.3.1/bin/kitchen:23:in `<main>'
+E, [2017-04-27T03:35:22.988896 #5420] ERROR -- Kitchen: /Users/paul.borg/.rvm/gems/ruby-2.3.1/bin/ruby_executable_hooks:15:in `eval'
+E, [2017-04-27T03:35:22.988913 #5420] ERROR -- Kitchen: /Users/paul.borg/.rvm/gems/ruby-2.3.1/bin/ruby_executable_hooks:15:in `<main>'
+E, [2017-04-27T03:35:22.988931 #5420] ERROR -- Kitchen: ----End Backtrace-----
+E, [2017-04-27T03:35:22.988945 #5420] ERROR -- Kitchen: -Composite Exception--
+E, [2017-04-27T03:35:22.988961 #5420] ERROR -- Kitchen: Class: Kitchen::InstanceFailure
+E, [2017-04-27T03:35:22.988973 #5420] ERROR -- Kitchen: Message: Converge failed on instance <default-ubuntu>.  Please see .kitchen/logs/default-ubuntu.log for more details
+E, [2017-04-27T03:35:22.988989 #5420] ERROR -- Kitchen: ----------------------
+E, [2017-04-27T03:35:22.989004 #5420] ERROR -- Kitchen: ------Backtrace-------
+E, [2017-04-27T03:35:22.989026 #5420] ERROR -- Kitchen: /Users/paul.borg/.rvm/gems/ruby-2.3.1/gems/kitchen-terraform-0.7.0/lib/kitchen/provisioner/terraform.rb:52:in `rescue in call'
+E, [2017-04-27T03:35:22.989046 #5420] ERROR -- Kitchen: /Users/paul.borg/.rvm/gems/ruby-2.3.1/gems/kitchen-terraform-0.7.0/lib/kitchen/provisioner/terraform.rb:50:in `call'
+E, [2017-04-27T03:35:22.989061 #5420] ERROR -- Kitchen: /Users/paul.borg/.rvm/gems/ruby-2.3.1/gems/test-kitchen-1.16.0/lib/kitchen/instance.rb:384:in `block in converge_action'
+E, [2017-04-27T03:35:22.989077 #5420] ERROR -- Kitchen: /Users/paul.borg/.rvm/gems/ruby-2.3.1/gems/test-kitchen-1.16.0/lib/kitchen/instance.rb:527:in `synchronize_or_call'
+E, [2017-04-27T03:35:22.989091 #5420] ERROR -- Kitchen: /Users/paul.borg/.rvm/gems/ruby-2.3.1/gems/test-kitchen-1.16.0/lib/kitchen/instance.rb:489:in `block in action'
+E, [2017-04-27T03:35:22.989106 #5420] ERROR -- Kitchen: /Users/paul.borg/.rvm/rubies/ruby-2.3.1/lib/ruby/2.3.0/benchmark.rb:293:in `measure'
+E, [2017-04-27T03:35:22.989122 #5420] ERROR -- Kitchen: /Users/paul.borg/.rvm/gems/ruby-2.3.1/gems/test-kitchen-1.16.0/lib/kitchen/instance.rb:488:in `action'
+E, [2017-04-27T03:35:22.989135 #5420] ERROR -- Kitchen: /Users/paul.borg/.rvm/gems/ruby-2.3.1/gems/test-kitchen-1.16.0/lib/kitchen/instance.rb:380:in `converge_action'
+E, [2017-04-27T03:35:22.989159 #5420] ERROR -- Kitchen: /Users/paul.borg/.rvm/gems/ruby-2.3.1/gems/test-kitchen-1.16.0/lib/kitchen/instance.rb:359:in `block in transition_to'
+E, [2017-04-27T03:35:22.989173 #5420] ERROR -- Kitchen: /Users/paul.borg/.rvm/gems/ruby-2.3.1/gems/test-kitchen-1.16.0/lib/kitchen/instance.rb:358:in `each'
+E, [2017-04-27T03:35:22.989188 #5420] ERROR -- Kitchen: /Users/paul.borg/.rvm/gems/ruby-2.3.1/gems/test-kitchen-1.16.0/lib/kitchen/instance.rb:358:in `transition_to'
+E, [2017-04-27T03:35:22.989203 #5420] ERROR -- Kitchen: /Users/paul.borg/.rvm/gems/ruby-2.3.1/gems/test-kitchen-1.16.0/lib/kitchen/instance.rb:135:in `converge'
+E, [2017-04-27T03:35:22.989219 #5420] ERROR -- Kitchen: /Users/paul.borg/.rvm/gems/ruby-2.3.1/gems/test-kitchen-1.16.0/lib/kitchen/command.rb:197:in `public_send'
+E, [2017-04-27T03:35:22.989234 #5420] ERROR -- Kitchen: /Users/paul.borg/.rvm/gems/ruby-2.3.1/gems/test-kitchen-1.16.0/lib/kitchen/command.rb:197:in `run_action_in_thread'
+E, [2017-04-27T03:35:22.989251 #5420] ERROR -- Kitchen: /Users/paul.borg/.rvm/gems/ruby-2.3.1/gems/test-kitchen-1.16.0/lib/kitchen/command.rb:169:in `block (2 levels) in run_action'
+E, [2017-04-27T03:35:22.989266 #5420] ERROR -- Kitchen: ----End Backtrace-----
+E, [2017-04-27T03:35:22.989277 #5420] ERROR -- Kitchen: ---Nested Exception---
+E, [2017-04-27T03:35:22.989291 #5420] ERROR -- Kitchen: Class: Kitchen::ActionFailed
+E, [2017-04-27T03:35:22.989304 #5420] ERROR -- Kitchen: Message: `/usr/local/bin/terraform apply -input=false -parallelism=10 -state-out=/Users/paul.borg/work/ops-terraform-modules/network/.kitchen/kitchen-terraform/default-ubuntu/terraform.tfstate  /Users/paul.borg/work/ops-terraform-modules/network/.kitchen/kitchen-terraform/default-ubuntu/terraform.tfplan` failed: "Expected process to exit with [0], but received '1'
+---- Begin output of /usr/local/bin/terraform apply -input=false -parallelism=10 -state-out=/Users/paul.borg/work/ops-terraform-modules/network/.kitchen/kitchen-terraform/default-ubuntu/terraform.tfstate  /Users/paul.borg/work/ops-terraform-modules/network/.kitchen/kitchen-terraform/default-ubuntu/terraform.tfplan ----
+STDOUT: [0m[1mmodule.app_subnet.aws_subnet.private: Creating...[0m
+  assign_ipv6_address_on_creation: "" => "false"
+  availability_zone:               "" => "ap-southeast-2a"
+  cidr_block:                      "" => "10.0.10.0/24"
+  ipv6_cidr_block_association_id:  "" => "<computed>"
+  map_public_ip_on_launch:         "" => "false"
+  tags.%:                          "" => "1"
+  tags.Name:                       "" => "test-001"
+  vpc_id:                          "" => "vpc-04e36a60"[0m
+[0m[1mmodule.data_subnet.aws_route_table.data: Creating...[0m
+  route.#:   "" => "<computed>"
+  tags.%:    "" => "1"
+  tags.Name: "" => "test"
+  vpc_id:    "" => "vpc-04e36a60"[0m
+[0m[1mmodule.data_subnet.aws_subnet.data: Creating...[0m
+  assign_ipv6_address_on_creation: "" => "false"
+  availability_zone:               "" => "ap-southeast-2a"
+  cidr_block:                      "" => "10.0.20.0/24"
+  ipv6_cidr_block_association_id:  "" => "<computed>"
+  map_public_ip_on_launch:         "" => "false"
+  tags.%:                          "" => "1"
+  tags.Name:                       "" => "test-001"
+  vpc_id:                          "" => "vpc-04e36a60"[0m
+[0m[1mmodule.public_subnet.aws_subnet.public: Creating...[0m
+  assign_ipv6_address_on_creation: "" => "false"
+  availability_zone:               "" => "ap-southeast-2a"
+  cidr_block:                      "" => "10.0.1.0/24"
+  ipv6_cidr_block_association_id:  "" => "<computed>"
+  map_public_ip_on_launch:         "" => "true"
+  tags.%:                          "" => "1"
+  tags.Name:                       "" => "test-001"
+  vpc_id:                          "" => "vpc-04e36a60"[0m
+[0m[1mmodule.public_subnet.aws_internet_gateway.public: Creating...[0m
+  tags.%:    "0" => "1"
+  tags.Name: "" => "test"
+  vpc_id:    "" => "vpc-04e36a60"[0m
+[0m[1mmodule.app_nat.aws_eip.nat: Creating...[0m
+  allocation_id:     "" => "<computed>"
+  association_id:    "" => "<computed>"
+  domain:            "" => "<computed>"
+  instance:          "" => "<computed>"
+  network_interface: "" => "<computed>"
+  private_ip:        "" => "<computed>"
+  public_ip:         "" => "<computed>"
+  vpc:               "" => "true"[0m
+[0m[1mmodule.app_nat.aws_eip.nat: Creation complete (ID: eipalloc-4f9e9b2a)[0m[0m
+[0m[1mmodule.data_subnet.aws_route_table.data: Creation complete (ID: rtb-1a35657e)[0m[0m
+STDERR: [31mError applying plan:
+
+4 error(s) occurred:
+
+* module.public_subnet.aws_internet_gateway.public: 1 error(s) occurred:
+
+* aws_internet_gateway.public: InvalidParameterValue: Network vpc-04e36a60 already has an internet gateway attached
+	status code: 400, request id: 0e59bb86-2ad8-4d24-8f59-ae510a8f39ec
+* module.public_subnet.aws_subnet.public: 1 error(s) occurred:
+
+* aws_subnet.public: Error creating subnet: InvalidSubnet.Conflict: The CIDR '10.0.1.0/24' conflicts with another subnet
+	status code: 400, request id: 585fc201-d003-4d3c-b8ac-7af7f663a700
+* module.data_subnet.aws_subnet.data: 1 error(s) occurred:
+
+* aws_subnet.data: Error creating subnet: InvalidSubnet.Conflict: The CIDR '10.0.20.0/24' conflicts with another subnet
+	status code: 400, request id: 7d8a3b14-3ec8-4836-96bc-6b5d4a5c5768
+* module.app_subnet.aws_subnet.private: 1 error(s) occurred:
+
+* aws_subnet.private: Error creating subnet: InvalidSubnet.Conflict: The CIDR '10.0.10.0/24' conflicts with another subnet
+	status code: 400, request id: a9debaa3-5ea7-4e19-8ac0-1188c4f8abe3
+
+Terraform does not automatically rollback in the face of errors.
+Instead, your Terraform state file has been partially updated with
+any resources that successfully completed. Please address the error
+above and apply again to incrementally change your infrastructure.[0m[0m
+---- End output of /usr/local/bin/terraform apply -input=false -parallelism=10 -state-out=/Users/paul.borg/work/ops-terraform-modules/network/.kitchen/kitchen-terraform/default-ubuntu/terraform.tfstate  /Users/paul.borg/work/ops-terraform-modules/network/.kitchen/kitchen-terraform/default-ubuntu/terraform.tfplan ----
+Ran /usr/local/bin/terraform apply -input=false -parallelism=10 -state-out=/Users/paul.borg/work/ops-terraform-modules/network/.kitchen/kitchen-terraform/default-ubuntu/terraform.tfstate  /Users/paul.borg/work/ops-terraform-modules/network/.kitchen/kitchen-terraform/default-ubuntu/terraform.tfplan returned 1"
+E, [2017-04-27T03:35:22.989330 #5420] ERROR -- Kitchen: ----------------------
+E, [2017-04-27T03:35:22.989343 #5420] ERROR -- Kitchen: ------Backtrace-------
+E, [2017-04-27T03:35:22.989357 #5420] ERROR -- Kitchen: /Users/paul.borg/.rvm/gems/ruby-2.3.1/gems/kitchen-terraform-0.7.0/lib/kitchen/provisioner/terraform.rb:52:in `rescue in call'
+E, [2017-04-27T03:35:22.989376 #5420] ERROR -- Kitchen: /Users/paul.borg/.rvm/gems/ruby-2.3.1/gems/kitchen-terraform-0.7.0/lib/kitchen/provisioner/terraform.rb:50:in `call'
+E, [2017-04-27T03:35:22.989390 #5420] ERROR -- Kitchen: /Users/paul.borg/.rvm/gems/ruby-2.3.1/gems/test-kitchen-1.16.0/lib/kitchen/instance.rb:384:in `block in converge_action'
+E, [2017-04-27T03:35:22.989405 #5420] ERROR -- Kitchen: /Users/paul.borg/.rvm/gems/ruby-2.3.1/gems/test-kitchen-1.16.0/lib/kitchen/instance.rb:527:in `synchronize_or_call'
+E, [2017-04-27T03:35:22.989421 #5420] ERROR -- Kitchen: /Users/paul.borg/.rvm/gems/ruby-2.3.1/gems/test-kitchen-1.16.0/lib/kitchen/instance.rb:489:in `block in action'
+E, [2017-04-27T03:35:22.989434 #5420] ERROR -- Kitchen: /Users/paul.borg/.rvm/rubies/ruby-2.3.1/lib/ruby/2.3.0/benchmark.rb:293:in `measure'
+E, [2017-04-27T03:35:22.989450 #5420] ERROR -- Kitchen: /Users/paul.borg/.rvm/gems/ruby-2.3.1/gems/test-kitchen-1.16.0/lib/kitchen/instance.rb:488:in `action'
+E, [2017-04-27T03:35:22.989464 #5420] ERROR -- Kitchen: /Users/paul.borg/.rvm/gems/ruby-2.3.1/gems/test-kitchen-1.16.0/lib/kitchen/instance.rb:380:in `converge_action'
+E, [2017-04-27T03:35:22.989478 #5420] ERROR -- Kitchen: /Users/paul.borg/.rvm/gems/ruby-2.3.1/gems/test-kitchen-1.16.0/lib/kitchen/instance.rb:359:in `block in transition_to'
+E, [2017-04-27T03:35:22.989491 #5420] ERROR -- Kitchen: /Users/paul.borg/.rvm/gems/ruby-2.3.1/gems/test-kitchen-1.16.0/lib/kitchen/instance.rb:358:in `each'
+E, [2017-04-27T03:35:22.989506 #5420] ERROR -- Kitchen: /Users/paul.borg/.rvm/gems/ruby-2.3.1/gems/test-kitchen-1.16.0/lib/kitchen/instance.rb:358:in `transition_to'
+E, [2017-04-27T03:35:22.989519 #5420] ERROR -- Kitchen: /Users/paul.borg/.rvm/gems/ruby-2.3.1/gems/test-kitchen-1.16.0/lib/kitchen/instance.rb:135:in `converge'
+E, [2017-04-27T03:35:22.989533 #5420] ERROR -- Kitchen: /Users/paul.borg/.rvm/gems/ruby-2.3.1/gems/test-kitchen-1.16.0/lib/kitchen/command.rb:197:in `public_send'
+E, [2017-04-27T03:35:22.989548 #5420] ERROR -- Kitchen: /Users/paul.borg/.rvm/gems/ruby-2.3.1/gems/test-kitchen-1.16.0/lib/kitchen/command.rb:197:in `run_action_in_thread'
+E, [2017-04-27T03:35:22.989561 #5420] ERROR -- Kitchen: /Users/paul.borg/.rvm/gems/ruby-2.3.1/gems/test-kitchen-1.16.0/lib/kitchen/command.rb:169:in `block (2 levels) in run_action'
+E, [2017-04-27T03:35:22.989585 #5420] ERROR -- Kitchen: ----End Backtrace-----

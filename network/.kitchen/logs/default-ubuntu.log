@@ -1,0 +1,387 @@
+I, [2017-04-27T03:35:00.138312 #5420]  INFO -- default-ubuntu: -----> Converging <default-ubuntu>...
+I, [2017-04-27T03:35:00.414158 #5420]  INFO -- default-ubuntu: Get: file:///Users/paul.borg/work/ops-terraform-modules/network/nat (update)
+I, [2017-04-27T03:35:00.414570 #5420]  INFO -- default-ubuntu: Get: file:///Users/paul.borg/work/ops-terraform-modules/network/public_subnet (update)
+I, [2017-04-27T03:35:00.415332 #5420]  INFO -- default-ubuntu: Get: file:///Users/paul.borg/work/ops-terraform-modules/network/private_subnet (update)
+I, [2017-04-27T03:35:00.415969 #5420]  INFO -- default-ubuntu: Get: file:///Users/paul.borg/work/ops-terraform-modules/network/data_subnet (update)
+I, [2017-04-27T03:35:00.661195 #5420]  INFO -- default-ubuntu: [0m[1mRefreshing Terraform state in-memory prior to plan...[0m
+I, [2017-04-27T03:35:00.661332 #5420]  INFO -- default-ubuntu: The refreshed state will be used to calculate this plan, but will not be
+I, [2017-04-27T03:35:00.661360 #5420]  INFO -- default-ubuntu: persisted to local or remote state storage.
+I, [2017-04-27T03:35:00.661377 #5420]  INFO -- default-ubuntu: [0m
+I, [2017-04-27T03:35:06.261550 #5420]  INFO -- default-ubuntu: [0m[1mdata.aws_vpc.available: Refreshing state...[0m
+I, [2017-04-27T03:35:16.816614 #5420]  INFO -- default-ubuntu: The Terraform execution plan has been generated and is shown below.
+I, [2017-04-27T03:35:16.816734 #5420]  INFO -- default-ubuntu: Resources are shown in alphabetical order for quick scanning. Green resources
+I, [2017-04-27T03:35:16.816790 #5420]  INFO -- default-ubuntu: will be created (or destroyed and then created if an existing resource
+I, [2017-04-27T03:35:16.816900 #5420]  INFO -- default-ubuntu: exists), yellow resources are being changed in-place, and red resources
+I, [2017-04-27T03:35:16.816993 #5420]  INFO -- default-ubuntu: will be destroyed. Cyan entries are data sources to be read.
+I, [2017-04-27T03:35:16.817026 #5420]  INFO -- default-ubuntu: 
+I, [2017-04-27T03:35:16.817109 #5420]  INFO -- default-ubuntu: Your plan was also saved to the path below. Call the "apply" subcommand
+I, [2017-04-27T03:35:16.817205 #5420]  INFO -- default-ubuntu: with this plan file and Terraform will exactly execute this execution
+I, [2017-04-27T03:35:16.817247 #5420]  INFO -- default-ubuntu: plan.
+I, [2017-04-27T03:35:16.817276 #5420]  INFO -- default-ubuntu: 
+I, [2017-04-27T03:35:16.817376 #5420]  INFO -- default-ubuntu: Path: /Users/paul.borg/work/ops-terraform-modules/network/.kitchen/kitchen-terraform/default-ubuntu/terraform.tfplan
+I, [2017-04-27T03:35:16.817410 #5420]  INFO -- default-ubuntu: 
+I, [2017-04-27T03:35:16.817513 #5420]  INFO -- default-ubuntu: [32m+ module.app_subnet.aws_route_table.private
+I, [2017-04-27T03:35:16.817607 #5420]  INFO -- default-ubuntu: [0m    route.#:                                     "1"
+I, [2017-04-27T03:35:16.817734 #5420]  INFO -- default-ubuntu:     route.~1653964983.cidr_block:                "0.0.0.0/0"
+I, [2017-04-27T03:35:16.817772 #5420]  INFO -- default-ubuntu:     route.~1653964983.egress_only_gateway_id:    ""
+I, [2017-04-27T03:35:16.817848 #5420]  INFO -- default-ubuntu:     route.~1653964983.gateway_id:                ""
+I, [2017-04-27T03:35:16.817873 #5420]  INFO -- default-ubuntu:     route.~1653964983.instance_id:               ""
+I, [2017-04-27T03:35:16.817956 #5420]  INFO -- default-ubuntu:     route.~1653964983.ipv6_cidr_block:           ""
+I, [2017-04-27T03:35:16.818112 #5420]  INFO -- default-ubuntu:     route.~1653964983.nat_gateway_id:            "${element(var.nat_gateway_ids, count.index)}"
+I, [2017-04-27T03:35:16.818280 #5420]  INFO -- default-ubuntu:     route.~1653964983.network_interface_id:      ""
+I, [2017-04-27T03:35:16.818339 #5420]  INFO -- default-ubuntu:     route.~1653964983.vpc_peering_connection_id: ""
+I, [2017-04-27T03:35:16.818362 #5420]  INFO -- default-ubuntu:     tags.%:                                      "1"
+I, [2017-04-27T03:35:16.818443 #5420]  INFO -- default-ubuntu:     tags.Name:                                   "test"
+I, [2017-04-27T03:35:16.818513 #5420]  INFO -- default-ubuntu:     vpc_id:                                      "vpc-04e36a60"
+I, [2017-04-27T03:35:16.818572 #5420]  INFO -- default-ubuntu: [0m
+I, [2017-04-27T03:35:16.818699 #5420]  INFO -- default-ubuntu: [0m[32m+ module.app_subnet.aws_route_table_association.private
+I, [2017-04-27T03:35:16.818758 #5420]  INFO -- default-ubuntu: [0m    route_table_id: "${element(aws_route_table.private.*.id, count.index)}"
+I, [2017-04-27T03:35:16.818807 #5420]  INFO -- default-ubuntu:     subnet_id:      "${element(aws_subnet.private.*.id, count.index)}"
+I, [2017-04-27T03:35:16.818827 #5420]  INFO -- default-ubuntu: [0m
+I, [2017-04-27T03:35:16.818902 #5420]  INFO -- default-ubuntu: [0m[32m+ module.app_subnet.aws_subnet.private
+I, [2017-04-27T03:35:16.819023 #5420]  INFO -- default-ubuntu: [0m    assign_ipv6_address_on_creation: "false"
+I, [2017-04-27T03:35:16.819106 #5420]  INFO -- default-ubuntu:     availability_zone:               "ap-southeast-2a"
+I, [2017-04-27T03:35:16.819166 #5420]  INFO -- default-ubuntu:     cidr_block:                      "10.0.10.0/24"
+I, [2017-04-27T03:35:16.819205 #5420]  INFO -- default-ubuntu:     ipv6_cidr_block_association_id:  "<computed>"
+I, [2017-04-27T03:35:16.819270 #5420]  INFO -- default-ubuntu:     map_public_ip_on_launch:         "false"
+I, [2017-04-27T03:35:16.819328 #5420]  INFO -- default-ubuntu:     tags.%:                          "1"
+I, [2017-04-27T03:35:16.819396 #5420]  INFO -- default-ubuntu:     tags.Name:                       "test-001"
+I, [2017-04-27T03:35:16.819453 #5420]  INFO -- default-ubuntu:     vpc_id:                          "vpc-04e36a60"
+I, [2017-04-27T03:35:16.819532 #5420]  INFO -- default-ubuntu: [0m
+I, [2017-04-27T03:35:16.819593 #5420]  INFO -- default-ubuntu: [0m[32m+ module.public_subnet.aws_internet_gateway.public
+I, [2017-04-27T03:35:16.819616 #5420]  INFO -- default-ubuntu: [0m    tags.%:    "1"
+I, [2017-04-27T03:35:16.819630 #5420]  INFO -- default-ubuntu:     tags.Name: "test"
+I, [2017-04-27T03:35:16.819643 #5420]  INFO -- default-ubuntu:     vpc_id:    "vpc-04e36a60"
+I, [2017-04-27T03:35:16.819655 #5420]  INFO -- default-ubuntu: [0m
+I, [2017-04-27T03:35:16.819728 #5420]  INFO -- default-ubuntu: [0m[32m+ module.public_subnet.aws_route_table.public
+I, [2017-04-27T03:35:16.819756 #5420]  INFO -- default-ubuntu: [0m    route.#:                                     "1"
+I, [2017-04-27T03:35:16.819833 #5420]  INFO -- default-ubuntu:     route.~2593658367.cidr_block:                "0.0.0.0/0"
+I, [2017-04-27T03:35:16.819898 #5420]  INFO -- default-ubuntu:     route.~2593658367.egress_only_gateway_id:    ""
+I, [2017-04-27T03:35:16.820067 #5420]  INFO -- default-ubuntu:     route.~2593658367.gateway_id:                "${aws_internet_gateway.public.id}"
+I, [2017-04-27T03:35:16.820172 #5420]  INFO -- default-ubuntu:     route.~2593658367.instance_id:               ""
+I, [2017-04-27T03:35:16.820207 #5420]  INFO -- default-ubuntu:     route.~2593658367.ipv6_cidr_block:           ""
+I, [2017-04-27T03:35:16.820314 #5420]  INFO -- default-ubuntu:     route.~2593658367.nat_gateway_id:            ""
+I, [2017-04-27T03:35:16.820345 #5420]  INFO -- default-ubuntu:     route.~2593658367.network_interface_id:      ""
+I, [2017-04-27T03:35:16.820374 #5420]  INFO -- default-ubuntu:     route.~2593658367.vpc_peering_connection_id: ""
+I, [2017-04-27T03:35:16.820513 #5420]  INFO -- default-ubuntu:     tags.%:                                      "1"
+I, [2017-04-27T03:35:16.820545 #5420]  INFO -- default-ubuntu:     tags.Name:                                   "test"
+I, [2017-04-27T03:35:16.820630 #5420]  INFO -- default-ubuntu:     vpc_id:                                      "vpc-04e36a60"
+I, [2017-04-27T03:35:16.820660 #5420]  INFO -- default-ubuntu: [0m
+I, [2017-04-27T03:35:16.820682 #5420]  INFO -- default-ubuntu: [0m[32m+ module.public_subnet.aws_route_table_association.public
+I, [2017-04-27T03:35:16.820708 #5420]  INFO -- default-ubuntu: [0m    route_table_id: "${aws_route_table.public.id}"
+I, [2017-04-27T03:35:16.820815 #5420]  INFO -- default-ubuntu:     subnet_id:      "${element(aws_subnet.public.*.id, count.index)}"
+I, [2017-04-27T03:35:16.820861 #5420]  INFO -- default-ubuntu: [0m
+I, [2017-04-27T03:35:16.820888 #5420]  INFO -- default-ubuntu: [0m[32m+ module.public_subnet.aws_subnet.public
+I, [2017-04-27T03:35:16.820912 #5420]  INFO -- default-ubuntu: [0m    assign_ipv6_address_on_creation: "false"
+I, [2017-04-27T03:35:16.821017 #5420]  INFO -- default-ubuntu:     availability_zone:               "ap-southeast-2a"
+I, [2017-04-27T03:35:16.821044 #5420]  INFO -- default-ubuntu:     cidr_block:                      "10.0.1.0/24"
+I, [2017-04-27T03:35:16.821067 #5420]  INFO -- default-ubuntu:     ipv6_cidr_block_association_id:  "<computed>"
+I, [2017-04-27T03:35:16.821159 #5420]  INFO -- default-ubuntu:     map_public_ip_on_launch:         "true"
+I, [2017-04-27T03:35:16.821186 #5420]  INFO -- default-ubuntu:     tags.%:                          "1"
+I, [2017-04-27T03:35:16.821207 #5420]  INFO -- default-ubuntu:     tags.Name:                       "test-001"
+I, [2017-04-27T03:35:16.821300 #5420]  INFO -- default-ubuntu:     vpc_id:                          "vpc-04e36a60"
+I, [2017-04-27T03:35:16.821325 #5420]  INFO -- default-ubuntu: [0m
+I, [2017-04-27T03:35:16.821350 #5420]  INFO -- default-ubuntu: [0m[32m+ module.data_subnet.aws_route_table.data
+I, [2017-04-27T03:35:16.821501 #5420]  INFO -- default-ubuntu: [0m    route.#:   "<computed>"
+I, [2017-04-27T03:35:16.821526 #5420]  INFO -- default-ubuntu:     tags.%:    "1"
+I, [2017-04-27T03:35:16.821551 #5420]  INFO -- default-ubuntu:     tags.Name: "test"
+I, [2017-04-27T03:35:16.821574 #5420]  INFO -- default-ubuntu:     vpc_id:    "vpc-04e36a60"
+I, [2017-04-27T03:35:16.821592 #5420]  INFO -- default-ubuntu: [0m
+I, [2017-04-27T03:35:16.821615 #5420]  INFO -- default-ubuntu: [0m[32m+ module.data_subnet.aws_route_table_association.private
+I, [2017-04-27T03:35:16.821742 #5420]  INFO -- default-ubuntu: [0m    route_table_id: "${element(aws_route_table.data.*.id, count.index)}"
+I, [2017-04-27T03:35:16.821781 #5420]  INFO -- default-ubuntu:     subnet_id:      "${element(aws_subnet.data.*.id, count.index)}"
+I, [2017-04-27T03:35:16.821803 #5420]  INFO -- default-ubuntu: [0m
+I, [2017-04-27T03:35:16.821826 #5420]  INFO -- default-ubuntu: [0m[32m+ module.data_subnet.aws_subnet.data
+I, [2017-04-27T03:35:16.821928 #5420]  INFO -- default-ubuntu: [0m    assign_ipv6_address_on_creation: "false"
+I, [2017-04-27T03:35:16.821955 #5420]  INFO -- default-ubuntu:     availability_zone:               "ap-southeast-2a"
+I, [2017-04-27T03:35:16.822026 #5420]  INFO -- default-ubuntu:     cidr_block:                      "10.0.20.0/24"
+I, [2017-04-27T03:35:16.822054 #5420]  INFO -- default-ubuntu:     ipv6_cidr_block_association_id:  "<computed>"
+I, [2017-04-27T03:35:16.822124 #5420]  INFO -- default-ubuntu:     map_public_ip_on_launch:         "false"
+I, [2017-04-27T03:35:16.822149 #5420]  INFO -- default-ubuntu:     tags.%:                          "1"
+I, [2017-04-27T03:35:16.822219 #5420]  INFO -- default-ubuntu:     tags.Name:                       "test-001"
+I, [2017-04-27T03:35:16.822323 #5420]  INFO -- default-ubuntu:     vpc_id:                          "vpc-04e36a60"
+I, [2017-04-27T03:35:16.822347 #5420]  INFO -- default-ubuntu: [0m
+I, [2017-04-27T03:35:16.822371 #5420]  INFO -- default-ubuntu: [0m[32m+ module.app_nat.aws_eip.nat
+I, [2017-04-27T03:35:16.822457 #5420]  INFO -- default-ubuntu: [0m    allocation_id:     "<computed>"
+I, [2017-04-27T03:35:16.822478 #5420]  INFO -- default-ubuntu:     association_id:    "<computed>"
+I, [2017-04-27T03:35:16.822501 #5420]  INFO -- default-ubuntu:     domain:            "<computed>"
+I, [2017-04-27T03:35:16.822523 #5420]  INFO -- default-ubuntu:     instance:          "<computed>"
+I, [2017-04-27T03:35:16.822613 #5420]  INFO -- default-ubuntu:     network_interface: "<computed>"
+I, [2017-04-27T03:35:16.822637 #5420]  INFO -- default-ubuntu:     private_ip:        "<computed>"
+I, [2017-04-27T03:35:16.822658 #5420]  INFO -- default-ubuntu:     public_ip:         "<computed>"
+I, [2017-04-27T03:35:16.822686 #5420]  INFO -- default-ubuntu:     vpc:               "true"
+I, [2017-04-27T03:35:16.822706 #5420]  INFO -- default-ubuntu: [0m
+I, [2017-04-27T03:35:16.822813 #5420]  INFO -- default-ubuntu: [0m[32m+ module.app_nat.aws_nat_gateway.nat
+I, [2017-04-27T03:35:16.822837 #5420]  INFO -- default-ubuntu: [0m    allocation_id:        "${element(aws_eip.nat.*.id, count.index)}"
+I, [2017-04-27T03:35:16.822860 #5420]  INFO -- default-ubuntu:     network_interface_id: "<computed>"
+I, [2017-04-27T03:35:16.822880 #5420]  INFO -- default-ubuntu:     private_ip:           "<computed>"
+I, [2017-04-27T03:35:16.822975 #5420]  INFO -- default-ubuntu:     public_ip:            "<computed>"
+I, [2017-04-27T03:35:16.822999 #5420]  INFO -- default-ubuntu:     subnet_id:            "${element(var.subnet_ids, count.index)}"
+I, [2017-04-27T03:35:16.823020 #5420]  INFO -- default-ubuntu: [0m
+I, [2017-04-27T03:35:16.823038 #5420]  INFO -- default-ubuntu: [0m
+I, [2017-04-27T03:35:16.823165 #5420]  INFO -- default-ubuntu: [0m[1mPlan:[0m 12 to add, 0 to change, 0 to destroy.[0m
+I, [2017-04-27T03:35:22.227397 #5420]  INFO -- default-ubuntu: [0m[1mmodule.app_subnet.aws_subnet.private: Creating...[0m
+I, [2017-04-27T03:35:22.227612 #5420]  INFO -- default-ubuntu:   assign_ipv6_address_on_creation: "" => "false"
+I, [2017-04-27T03:35:22.227668 #5420]  INFO -- default-ubuntu:   availability_zone:               "" => "ap-southeast-2a"
+I, [2017-04-27T03:35:22.227861 #5420]  INFO -- default-ubuntu:   cidr_block:                      "" => "10.0.10.0/24"
+I, [2017-04-27T03:35:22.227917 #5420]  INFO -- default-ubuntu:   ipv6_cidr_block_association_id:  "" => "<computed>"
+I, [2017-04-27T03:35:22.227987 #5420]  INFO -- default-ubuntu:   map_public_ip_on_launch:         "" => "false"
+I, [2017-04-27T03:35:22.228145 #5420]  INFO -- default-ubuntu:   tags.%:                          "" => "1"
+I, [2017-04-27T03:35:22.228189 #5420]  INFO -- default-ubuntu:   tags.Name:                       "" => "test-001"
+I, [2017-04-27T03:35:22.228233 #5420]  INFO -- default-ubuntu:   vpc_id:                          "" => "vpc-04e36a60"[0m
+I, [2017-04-27T03:35:22.228419 #5420]  INFO -- default-ubuntu: [0m[1mmodule.data_subnet.aws_route_table.data: Creating...[0m
+I, [2017-04-27T03:35:22.228459 #5420]  INFO -- default-ubuntu:   route.#:   "" => "<computed>"
+I, [2017-04-27T03:35:22.228483 #5420]  INFO -- default-ubuntu:   tags.%:    "" => "1"
+I, [2017-04-27T03:35:22.228505 #5420]  INFO -- default-ubuntu:   tags.Name: "" => "test"
+I, [2017-04-27T03:35:22.228684 #5420]  INFO -- default-ubuntu:   vpc_id:    "" => "vpc-04e36a60"[0m
+I, [2017-04-27T03:35:22.228771 #5420]  INFO -- default-ubuntu: [0m[1mmodule.data_subnet.aws_subnet.data: Creating...[0m
+I, [2017-04-27T03:35:22.228810 #5420]  INFO -- default-ubuntu:   assign_ipv6_address_on_creation: "" => "false"
+I, [2017-04-27T03:35:22.228935 #5420]  INFO -- default-ubuntu:   availability_zone:               "" => "ap-southeast-2a"
+I, [2017-04-27T03:35:22.228973 #5420]  INFO -- default-ubuntu:   cidr_block:                      "" => "10.0.20.0/24"
+I, [2017-04-27T03:35:22.229002 #5420]  INFO -- default-ubuntu:   ipv6_cidr_block_association_id:  "" => "<computed>"
+I, [2017-04-27T03:35:22.229097 #5420]  INFO -- default-ubuntu:   map_public_ip_on_launch:         "" => "false"
+I, [2017-04-27T03:35:22.229123 #5420]  INFO -- default-ubuntu:   tags.%:                          "" => "1"
+I, [2017-04-27T03:35:22.229207 #5420]  INFO -- default-ubuntu:   tags.Name:                       "" => "test-001"
+I, [2017-04-27T03:35:22.229266 #5420]  INFO -- default-ubuntu:   vpc_id:                          "" => "vpc-04e36a60"[0m
+I, [2017-04-27T03:35:22.234280 #5420]  INFO -- default-ubuntu: [0m[1mmodule.public_subnet.aws_subnet.public: Creating...[0m
+I, [2017-04-27T03:35:22.234413 #5420]  INFO -- default-ubuntu:   assign_ipv6_address_on_creation: "" => "false"
+I, [2017-04-27T03:35:22.234551 #5420]  INFO -- default-ubuntu:   availability_zone:               "" => "ap-southeast-2a"
+I, [2017-04-27T03:35:22.234583 #5420]  INFO -- default-ubuntu:   cidr_block:                      "" => "10.0.1.0/24"
+I, [2017-04-27T03:35:22.234753 #5420]  INFO -- default-ubuntu:   ipv6_cidr_block_association_id:  "" => "<computed>"
+I, [2017-04-27T03:35:22.234821 #5420]  INFO -- default-ubuntu:   map_public_ip_on_launch:         "" => "true"
+I, [2017-04-27T03:35:22.234865 #5420]  INFO -- default-ubuntu:   tags.%:                          "" => "1"
+I, [2017-04-27T03:35:22.234905 #5420]  INFO -- default-ubuntu:   tags.Name:                       "" => "test-001"
+I, [2017-04-27T03:35:22.234994 #5420]  INFO -- default-ubuntu:   vpc_id:                          "" => "vpc-04e36a60"[0m
+I, [2017-04-27T03:35:22.235139 #5420]  INFO -- default-ubuntu: [0m[1mmodule.public_subnet.aws_internet_gateway.public: Creating...[0m
+I, [2017-04-27T03:35:22.235195 #5420]  INFO -- default-ubuntu:   tags.%:    "0" => "1"
+I, [2017-04-27T03:35:22.235276 #5420]  INFO -- default-ubuntu:   tags.Name: "" => "test"
+I, [2017-04-27T03:35:22.235303 #5420]  INFO -- default-ubuntu:   vpc_id:    "" => "vpc-04e36a60"[0m
+I, [2017-04-27T03:35:22.243088 #5420]  INFO -- default-ubuntu: [0m[1mmodule.app_nat.aws_eip.nat: Creating...[0m
+I, [2017-04-27T03:35:22.243200 #5420]  INFO -- default-ubuntu:   allocation_id:     "" => "<computed>"
+I, [2017-04-27T03:35:22.243231 #5420]  INFO -- default-ubuntu:   association_id:    "" => "<computed>"
+I, [2017-04-27T03:35:22.243247 #5420]  INFO -- default-ubuntu:   domain:            "" => "<computed>"
+I, [2017-04-27T03:35:22.243313 #5420]  INFO -- default-ubuntu:   instance:          "" => "<computed>"
+I, [2017-04-27T03:35:22.243369 #5420]  INFO -- default-ubuntu:   network_interface: "" => "<computed>"
+I, [2017-04-27T03:35:22.243446 #5420]  INFO -- default-ubuntu:   private_ip:        "" => "<computed>"
+I, [2017-04-27T03:35:22.243467 #5420]  INFO -- default-ubuntu:   public_ip:         "" => "<computed>"
+I, [2017-04-27T03:35:22.243672 #5420]  INFO -- default-ubuntu:   vpc:               "" => "true"[0m
+I, [2017-04-27T03:35:22.679696 #5420]  INFO -- default-ubuntu: [0m[1mmodule.app_nat.aws_eip.nat: Creation complete (ID: eipalloc-4f9e9b2a)[0m[0m
+I, [2017-04-27T03:35:22.960164 #5420]  INFO -- default-ubuntu: [0m[1mmodule.data_subnet.aws_route_table.data: Creation complete (ID: rtb-1a35657e)[0m[0m
+I, [2017-04-27T03:35:22.963453 #5420]  INFO -- default-ubuntu: [31mError applying plan:
+I, [2017-04-27T03:35:22.963530 #5420]  INFO -- default-ubuntu: 
+I, [2017-04-27T03:35:22.963703 #5420]  INFO -- default-ubuntu: 4 error(s) occurred:
+I, [2017-04-27T03:35:22.963765 #5420]  INFO -- default-ubuntu: 
+I, [2017-04-27T03:35:22.963812 #5420]  INFO -- default-ubuntu: * module.public_subnet.aws_internet_gateway.public: 1 error(s) occurred:
+I, [2017-04-27T03:35:22.963856 #5420]  INFO -- default-ubuntu: 
+I, [2017-04-27T03:35:22.964029 #5420]  INFO -- default-ubuntu: * aws_internet_gateway.public: InvalidParameterValue: Network vpc-04e36a60 already has an internet gateway attached
+I, [2017-04-27T03:35:22.964267 #5420]  INFO -- default-ubuntu: 	status code: 400, request id: 0e59bb86-2ad8-4d24-8f59-ae510a8f39ec
+I, [2017-04-27T03:35:22.964421 #5420]  INFO -- default-ubuntu: * module.public_subnet.aws_subnet.public: 1 error(s) occurred:
+I, [2017-04-27T03:35:22.964469 #5420]  INFO -- default-ubuntu: 
+I, [2017-04-27T03:35:22.964757 #5420]  INFO -- default-ubuntu: * aws_subnet.public: Error creating subnet: InvalidSubnet.Conflict: The CIDR '10.0.1.0/24' conflicts with another subnet
+I, [2017-04-27T03:35:22.964910 #5420]  INFO -- default-ubuntu: 	status code: 400, request id: 585fc201-d003-4d3c-b8ac-7af7f663a700
+I, [2017-04-27T03:35:22.965092 #5420]  INFO -- default-ubuntu: * module.data_subnet.aws_subnet.data: 1 error(s) occurred:
+I, [2017-04-27T03:35:22.965153 #5420]  INFO -- default-ubuntu: 
+I, [2017-04-27T03:35:22.965328 #5420]  INFO -- default-ubuntu: * aws_subnet.data: Error creating subnet: InvalidSubnet.Conflict: The CIDR '10.0.20.0/24' conflicts with another subnet
+I, [2017-04-27T03:35:22.965388 #5420]  INFO -- default-ubuntu: 	status code: 400, request id: 7d8a3b14-3ec8-4836-96bc-6b5d4a5c5768
+I, [2017-04-27T03:35:22.965482 #5420]  INFO -- default-ubuntu: * module.app_subnet.aws_subnet.private: 1 error(s) occurred:
+I, [2017-04-27T03:35:22.965524 #5420]  INFO -- default-ubuntu: 
+I, [2017-04-27T03:35:22.965729 #5420]  INFO -- default-ubuntu: * aws_subnet.private: Error creating subnet: InvalidSubnet.Conflict: The CIDR '10.0.10.0/24' conflicts with another subnet
+I, [2017-04-27T03:35:22.965827 #5420]  INFO -- default-ubuntu: 	status code: 400, request id: a9debaa3-5ea7-4e19-8ac0-1188c4f8abe3
+I, [2017-04-27T03:35:22.965865 #5420]  INFO -- default-ubuntu: 
+I, [2017-04-27T03:35:22.965943 #5420]  INFO -- default-ubuntu: Terraform does not automatically rollback in the face of errors.
+I, [2017-04-27T03:35:22.966029 #5420]  INFO -- default-ubuntu: Instead, your Terraform state file has been partially updated with
+I, [2017-04-27T03:35:22.966207 #5420]  INFO -- default-ubuntu: any resources that successfully completed. Please address the error
+I, [2017-04-27T03:35:22.966301 #5420]  INFO -- default-ubuntu: above and apply again to incrementally change your infrastructure.[0m[0m
+E, [2017-04-27T03:35:22.985980 #5420] ERROR -- default-ubuntu: Converge failed on instance <default-ubuntu>.
+E, [2017-04-27T03:35:22.986145 #5420] ERROR -- default-ubuntu: ------Exception-------
+E, [2017-04-27T03:35:22.986168 #5420] ERROR -- default-ubuntu: Class: Kitchen::ActionFailed
+E, [2017-04-27T03:35:22.986181 #5420] ERROR -- default-ubuntu: Message: `/usr/local/bin/terraform apply -input=false -parallelism=10 -state-out=/Users/paul.borg/work/ops-terraform-modules/network/.kitchen/kitchen-terraform/default-ubuntu/terraform.tfstate  /Users/paul.borg/work/ops-terraform-modules/network/.kitchen/kitchen-terraform/default-ubuntu/terraform.tfplan` failed: "Expected process to exit with [0], but received '1'
+---- Begin output of /usr/local/bin/terraform apply -input=false -parallelism=10 -state-out=/Users/paul.borg/work/ops-terraform-modules/network/.kitchen/kitchen-terraform/default-ubuntu/terraform.tfstate  /Users/paul.borg/work/ops-terraform-modules/network/.kitchen/kitchen-terraform/default-ubuntu/terraform.tfplan ----
+STDOUT: [0m[1mmodule.app_subnet.aws_subnet.private: Creating...[0m
+  assign_ipv6_address_on_creation: "" => "false"
+  availability_zone:               "" => "ap-southeast-2a"
+  cidr_block:                      "" => "10.0.10.0/24"
+  ipv6_cidr_block_association_id:  "" => "<computed>"
+  map_public_ip_on_launch:         "" => "false"
+  tags.%:                          "" => "1"
+  tags.Name:                       "" => "test-001"
+  vpc_id:                          "" => "vpc-04e36a60"[0m
+[0m[1mmodule.data_subnet.aws_route_table.data: Creating...[0m
+  route.#:   "" => "<computed>"
+  tags.%:    "" => "1"
+  tags.Name: "" => "test"
+  vpc_id:    "" => "vpc-04e36a60"[0m
+[0m[1mmodule.data_subnet.aws_subnet.data: Creating...[0m
+  assign_ipv6_address_on_creation: "" => "false"
+  availability_zone:               "" => "ap-southeast-2a"
+  cidr_block:                      "" => "10.0.20.0/24"
+  ipv6_cidr_block_association_id:  "" => "<computed>"
+  map_public_ip_on_launch:         "" => "false"
+  tags.%:                          "" => "1"
+  tags.Name:                       "" => "test-001"
+  vpc_id:                          "" => "vpc-04e36a60"[0m
+[0m[1mmodule.public_subnet.aws_subnet.public: Creating...[0m
+  assign_ipv6_address_on_creation: "" => "false"
+  availability_zone:               "" => "ap-southeast-2a"
+  cidr_block:                      "" => "10.0.1.0/24"
+  ipv6_cidr_block_association_id:  "" => "<computed>"
+  map_public_ip_on_launch:         "" => "true"
+  tags.%:                          "" => "1"
+  tags.Name:                       "" => "test-001"
+  vpc_id:                          "" => "vpc-04e36a60"[0m
+[0m[1mmodule.public_subnet.aws_internet_gateway.public: Creating...[0m
+  tags.%:    "0" => "1"
+  tags.Name: "" => "test"
+  vpc_id:    "" => "vpc-04e36a60"[0m
+[0m[1mmodule.app_nat.aws_eip.nat: Creating...[0m
+  allocation_id:     "" => "<computed>"
+  association_id:    "" => "<computed>"
+  domain:            "" => "<computed>"
+  instance:          "" => "<computed>"
+  network_interface: "" => "<computed>"
+  private_ip:        "" => "<computed>"
+  public_ip:         "" => "<computed>"
+  vpc:               "" => "true"[0m
+[0m[1mmodule.app_nat.aws_eip.nat: Creation complete (ID: eipalloc-4f9e9b2a)[0m[0m
+[0m[1mmodule.data_subnet.aws_route_table.data: Creation complete (ID: rtb-1a35657e)[0m[0m
+STDERR: [31mError applying plan:
+
+4 error(s) occurred:
+
+* module.public_subnet.aws_internet_gateway.public: 1 error(s) occurred:
+
+* aws_internet_gateway.public: InvalidParameterValue: Network vpc-04e36a60 already has an internet gateway attached
+	status code: 400, request id: 0e59bb86-2ad8-4d24-8f59-ae510a8f39ec
+* module.public_subnet.aws_subnet.public: 1 error(s) occurred:
+
+* aws_subnet.public: Error creating subnet: InvalidSubnet.Conflict: The CIDR '10.0.1.0/24' conflicts with another subnet
+	status code: 400, request id: 585fc201-d003-4d3c-b8ac-7af7f663a700
+* module.data_subnet.aws_subnet.data: 1 error(s) occurred:
+
+* aws_subnet.data: Error creating subnet: InvalidSubnet.Conflict: The CIDR '10.0.20.0/24' conflicts with another subnet
+	status code: 400, request id: 7d8a3b14-3ec8-4836-96bc-6b5d4a5c5768
+* module.app_subnet.aws_subnet.private: 1 error(s) occurred:
+
+* aws_subnet.private: Error creating subnet: InvalidSubnet.Conflict: The CIDR '10.0.10.0/24' conflicts with another subnet
+	status code: 400, request id: a9debaa3-5ea7-4e19-8ac0-1188c4f8abe3
+
+Terraform does not automatically rollback in the face of errors.
+Instead, your Terraform state file has been partially updated with
+any resources that successfully completed. Please address the error
+above and apply again to incrementally change your infrastructure.[0m[0m
+---- End output of /usr/local/bin/terraform apply -input=false -parallelism=10 -state-out=/Users/paul.borg/work/ops-terraform-modules/network/.kitchen/kitchen-terraform/default-ubuntu/terraform.tfstate  /Users/paul.borg/work/ops-terraform-modules/network/.kitchen/kitchen-terraform/default-ubuntu/terraform.tfplan ----
+Ran /usr/local/bin/terraform apply -input=false -parallelism=10 -state-out=/Users/paul.borg/work/ops-terraform-modules/network/.kitchen/kitchen-terraform/default-ubuntu/terraform.tfstate  /Users/paul.borg/work/ops-terraform-modules/network/.kitchen/kitchen-terraform/default-ubuntu/terraform.tfplan returned 1"
+E, [2017-04-27T03:35:22.986218 #5420] ERROR -- default-ubuntu: ----------------------
+E, [2017-04-27T03:35:22.986232 #5420] ERROR -- default-ubuntu: ------Backtrace-------
+E, [2017-04-27T03:35:22.986243 #5420] ERROR -- default-ubuntu: /Users/paul.borg/.rvm/gems/ruby-2.3.1/gems/kitchen-terraform-0.7.0/lib/kitchen/provisioner/terraform.rb:52:in `rescue in call'
+E, [2017-04-27T03:35:22.986255 #5420] ERROR -- default-ubuntu: /Users/paul.borg/.rvm/gems/ruby-2.3.1/gems/kitchen-terraform-0.7.0/lib/kitchen/provisioner/terraform.rb:50:in `call'
+E, [2017-04-27T03:35:22.986271 #5420] ERROR -- default-ubuntu: /Users/paul.borg/.rvm/gems/ruby-2.3.1/gems/test-kitchen-1.16.0/lib/kitchen/instance.rb:384:in `block in converge_action'
+E, [2017-04-27T03:35:22.986283 #5420] ERROR -- default-ubuntu: /Users/paul.borg/.rvm/gems/ruby-2.3.1/gems/test-kitchen-1.16.0/lib/kitchen/instance.rb:527:in `synchronize_or_call'
+E, [2017-04-27T03:35:22.986295 #5420] ERROR -- default-ubuntu: /Users/paul.borg/.rvm/gems/ruby-2.3.1/gems/test-kitchen-1.16.0/lib/kitchen/instance.rb:489:in `block in action'
+E, [2017-04-27T03:35:22.986306 #5420] ERROR -- default-ubuntu: /Users/paul.borg/.rvm/rubies/ruby-2.3.1/lib/ruby/2.3.0/benchmark.rb:293:in `measure'
+E, [2017-04-27T03:35:22.986322 #5420] ERROR -- default-ubuntu: /Users/paul.borg/.rvm/gems/ruby-2.3.1/gems/test-kitchen-1.16.0/lib/kitchen/instance.rb:488:in `action'
+E, [2017-04-27T03:35:22.986334 #5420] ERROR -- default-ubuntu: /Users/paul.borg/.rvm/gems/ruby-2.3.1/gems/test-kitchen-1.16.0/lib/kitchen/instance.rb:380:in `converge_action'
+E, [2017-04-27T03:35:22.986347 #5420] ERROR -- default-ubuntu: /Users/paul.borg/.rvm/gems/ruby-2.3.1/gems/test-kitchen-1.16.0/lib/kitchen/instance.rb:359:in `block in transition_to'
+E, [2017-04-27T03:35:22.986363 #5420] ERROR -- default-ubuntu: /Users/paul.borg/.rvm/gems/ruby-2.3.1/gems/test-kitchen-1.16.0/lib/kitchen/instance.rb:358:in `each'
+E, [2017-04-27T03:35:22.986376 #5420] ERROR -- default-ubuntu: /Users/paul.borg/.rvm/gems/ruby-2.3.1/gems/test-kitchen-1.16.0/lib/kitchen/instance.rb:358:in `transition_to'
+E, [2017-04-27T03:35:22.986458 #5420] ERROR -- default-ubuntu: /Users/paul.borg/.rvm/gems/ruby-2.3.1/gems/test-kitchen-1.16.0/lib/kitchen/instance.rb:135:in `converge'
+E, [2017-04-27T03:35:22.986470 #5420] ERROR -- default-ubuntu: /Users/paul.borg/.rvm/gems/ruby-2.3.1/gems/test-kitchen-1.16.0/lib/kitchen/command.rb:197:in `public_send'
+E, [2017-04-27T03:35:22.986481 #5420] ERROR -- default-ubuntu: /Users/paul.borg/.rvm/gems/ruby-2.3.1/gems/test-kitchen-1.16.0/lib/kitchen/command.rb:197:in `run_action_in_thread'
+E, [2017-04-27T03:35:22.986492 #5420] ERROR -- default-ubuntu: /Users/paul.borg/.rvm/gems/ruby-2.3.1/gems/test-kitchen-1.16.0/lib/kitchen/command.rb:169:in `block (2 levels) in run_action'
+E, [2017-04-27T03:35:22.986502 #5420] ERROR -- default-ubuntu: ----End Backtrace-----
+E, [2017-04-27T03:35:22.986512 #5420] ERROR -- default-ubuntu: ---Nested Exception---
+E, [2017-04-27T03:35:22.986523 #5420] ERROR -- default-ubuntu: Class: Kitchen::StandardError
+E, [2017-04-27T03:35:22.986535 #5420] ERROR -- default-ubuntu: Message: `/usr/local/bin/terraform apply -input=false -parallelism=10 -state-out=/Users/paul.borg/work/ops-terraform-modules/network/.kitchen/kitchen-terraform/default-ubuntu/terraform.tfstate  /Users/paul.borg/work/ops-terraform-modules/network/.kitchen/kitchen-terraform/default-ubuntu/terraform.tfplan` failed: "Expected process to exit with [0], but received '1'
+---- Begin output of /usr/local/bin/terraform apply -input=false -parallelism=10 -state-out=/Users/paul.borg/work/ops-terraform-modules/network/.kitchen/kitchen-terraform/default-ubuntu/terraform.tfstate  /Users/paul.borg/work/ops-terraform-modules/network/.kitchen/kitchen-terraform/default-ubuntu/terraform.tfplan ----
+STDOUT: [0m[1mmodule.app_subnet.aws_subnet.private: Creating...[0m
+  assign_ipv6_address_on_creation: "" => "false"
+  availability_zone:               "" => "ap-southeast-2a"
+  cidr_block:                      "" => "10.0.10.0/24"
+  ipv6_cidr_block_association_id:  "" => "<computed>"
+  map_public_ip_on_launch:         "" => "false"
+  tags.%:                          "" => "1"
+  tags.Name:                       "" => "test-001"
+  vpc_id:                          "" => "vpc-04e36a60"[0m
+[0m[1mmodule.data_subnet.aws_route_table.data: Creating...[0m
+  route.#:   "" => "<computed>"
+  tags.%:    "" => "1"
+  tags.Name: "" => "test"
+  vpc_id:    "" => "vpc-04e36a60"[0m
+[0m[1mmodule.data_subnet.aws_subnet.data: Creating...[0m
+  assign_ipv6_address_on_creation: "" => "false"
+  availability_zone:               "" => "ap-southeast-2a"
+  cidr_block:                      "" => "10.0.20.0/24"
+  ipv6_cidr_block_association_id:  "" => "<computed>"
+  map_public_ip_on_launch:         "" => "false"
+  tags.%:                          "" => "1"
+  tags.Name:                       "" => "test-001"
+  vpc_id:                          "" => "vpc-04e36a60"[0m
+[0m[1mmodule.public_subnet.aws_subnet.public: Creating...[0m
+  assign_ipv6_address_on_creation: "" => "false"
+  availability_zone:               "" => "ap-southeast-2a"
+  cidr_block:                      "" => "10.0.1.0/24"
+  ipv6_cidr_block_association_id:  "" => "<computed>"
+  map_public_ip_on_launch:         "" => "true"
+  tags.%:                          "" => "1"
+  tags.Name:                       "" => "test-001"
+  vpc_id:                          "" => "vpc-04e36a60"[0m
+[0m[1mmodule.public_subnet.aws_internet_gateway.public: Creating...[0m
+  tags.%:    "0" => "1"
+  tags.Name: "" => "test"
+  vpc_id:    "" => "vpc-04e36a60"[0m
+[0m[1mmodule.app_nat.aws_eip.nat: Creating...[0m
+  allocation_id:     "" => "<computed>"
+  association_id:    "" => "<computed>"
+  domain:            "" => "<computed>"
+  instance:          "" => "<computed>"
+  network_interface: "" => "<computed>"
+  private_ip:        "" => "<computed>"
+  public_ip:         "" => "<computed>"
+  vpc:               "" => "true"[0m
+[0m[1mmodule.app_nat.aws_eip.nat: Creation complete (ID: eipalloc-4f9e9b2a)[0m[0m
+[0m[1mmodule.data_subnet.aws_route_table.data: Creation complete (ID: rtb-1a35657e)[0m[0m
+STDERR: [31mError applying plan:
+
+4 error(s) occurred:
+
+* module.public_subnet.aws_internet_gateway.public: 1 error(s) occurred:
+
+* aws_internet_gateway.public: InvalidParameterValue: Network vpc-04e36a60 already has an internet gateway attached
+	status code: 400, request id: 0e59bb86-2ad8-4d24-8f59-ae510a8f39ec
+* module.public_subnet.aws_subnet.public: 1 error(s) occurred:
+
+* aws_subnet.public: Error creating subnet: InvalidSubnet.Conflict: The CIDR '10.0.1.0/24' conflicts with another subnet
+	status code: 400, request id: 585fc201-d003-4d3c-b8ac-7af7f663a700
+* module.data_subnet.aws_subnet.data: 1 error(s) occurred:
+
+* aws_subnet.data: Error creating subnet: InvalidSubnet.Conflict: The CIDR '10.0.20.0/24' conflicts with another subnet
+	status code: 400, request id: 7d8a3b14-3ec8-4836-96bc-6b5d4a5c5768
+* module.app_subnet.aws_subnet.private: 1 error(s) occurred:
+
+* aws_subnet.private: Error creating subnet: InvalidSubnet.Conflict: The CIDR '10.0.10.0/24' conflicts with another subnet
+	status code: 400, request id: a9debaa3-5ea7-4e19-8ac0-1188c4f8abe3
+
+Terraform does not automatically rollback in the face of errors.
+Instead, your Terraform state file has been partially updated with
+any resources that successfully completed. Please address the error
+above and apply again to incrementally change your infrastructure.[0m[0m
+---- End output of /usr/local/bin/terraform apply -input=false -parallelism=10 -state-out=/Users/paul.borg/work/ops-terraform-modules/network/.kitchen/kitchen-terraform/default-ubuntu/terraform.tfstate  /Users/paul.borg/work/ops-terraform-modules/network/.kitchen/kitchen-terraform/default-ubuntu/terraform.tfplan ----
+Ran /usr/local/bin/terraform apply -input=false -parallelism=10 -state-out=/Users/paul.borg/work/ops-terraform-modules/network/.kitchen/kitchen-terraform/default-ubuntu/terraform.tfstate  /Users/paul.borg/work/ops-terraform-modules/network/.kitchen/kitchen-terraform/default-ubuntu/terraform.tfplan returned 1"
+E, [2017-04-27T03:35:22.986557 #5420] ERROR -- default-ubuntu: ----------------------
+E, [2017-04-27T03:35:22.986570 #5420] ERROR -- default-ubuntu: ------Backtrace-------
+E, [2017-04-27T03:35:22.986581 #5420] ERROR -- default-ubuntu: /Users/paul.borg/.rvm/gems/ruby-2.3.1/gems/kitchen-terraform-0.7.0/lib/kitchen/provisioner/terraform.rb:52:in `rescue in call'
+E, [2017-04-27T03:35:22.986592 #5420] ERROR -- default-ubuntu: /Users/paul.borg/.rvm/gems/ruby-2.3.1/gems/kitchen-terraform-0.7.0/lib/kitchen/provisioner/terraform.rb:50:in `call'
+E, [2017-04-27T03:35:22.986602 #5420] ERROR -- default-ubuntu: /Users/paul.borg/.rvm/gems/ruby-2.3.1/gems/test-kitchen-1.16.0/lib/kitchen/instance.rb:384:in `block in converge_action'
+E, [2017-04-27T03:35:22.986613 #5420] ERROR -- default-ubuntu: /Users/paul.borg/.rvm/gems/ruby-2.3.1/gems/test-kitchen-1.16.0/lib/kitchen/instance.rb:527:in `synchronize_or_call'
+E, [2017-04-27T03:35:22.986624 #5420] ERROR -- default-ubuntu: /Users/paul.borg/.rvm/gems/ruby-2.3.1/gems/test-kitchen-1.16.0/lib/kitchen/instance.rb:489:in `block in action'
+E, [2017-04-27T03:35:22.986634 #5420] ERROR -- default-ubuntu: /Users/paul.borg/.rvm/rubies/ruby-2.3.1/lib/ruby/2.3.0/benchmark.rb:293:in `measure'
+E, [2017-04-27T03:35:22.986645 #5420] ERROR -- default-ubuntu: /Users/paul.borg/.rvm/gems/ruby-2.3.1/gems/test-kitchen-1.16.0/lib/kitchen/instance.rb:488:in `action'
+E, [2017-04-27T03:35:22.986656 #5420] ERROR -- default-ubuntu: /Users/paul.borg/.rvm/gems/ruby-2.3.1/gems/test-kitchen-1.16.0/lib/kitchen/instance.rb:380:in `converge_action'
+E, [2017-04-27T03:35:22.986667 #5420] ERROR -- default-ubuntu: /Users/paul.borg/.rvm/gems/ruby-2.3.1/gems/test-kitchen-1.16.0/lib/kitchen/instance.rb:359:in `block in transition_to'
+E, [2017-04-27T03:35:22.986682 #5420] ERROR -- default-ubuntu: /Users/paul.borg/.rvm/gems/ruby-2.3.1/gems/test-kitchen-1.16.0/lib/kitchen/instance.rb:358:in `each'
+E, [2017-04-27T03:35:22.986694 #5420] ERROR -- default-ubuntu: /Users/paul.borg/.rvm/gems/ruby-2.3.1/gems/test-kitchen-1.16.0/lib/kitchen/instance.rb:358:in `transition_to'
+E, [2017-04-27T03:35:22.986705 #5420] ERROR -- default-ubuntu: /Users/paul.borg/.rvm/gems/ruby-2.3.1/gems/test-kitchen-1.16.0/lib/kitchen/instance.rb:135:in `converge'
+E, [2017-04-27T03:35:22.986718 #5420] ERROR -- default-ubuntu: /Users/paul.borg/.rvm/gems/ruby-2.3.1/gems/test-kitchen-1.16.0/lib/kitchen/command.rb:197:in `public_send'
+E, [2017-04-27T03:35:22.986731 #5420] ERROR -- default-ubuntu: /Users/paul.borg/.rvm/gems/ruby-2.3.1/gems/test-kitchen-1.16.0/lib/kitchen/command.rb:197:in `run_action_in_thread'
+E, [2017-04-27T03:35:22.986752 #5420] ERROR -- default-ubuntu: /Users/paul.borg/.rvm/gems/ruby-2.3.1/gems/test-kitchen-1.16.0/lib/kitchen/command.rb:169:in `block (2 levels) in run_action'
+E, [2017-04-27T03:35:22.986763 #5420] ERROR -- default-ubuntu: ----End Backtrace-----

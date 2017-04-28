@@ -1,0 +1,20 @@
+---
+driver:
+  name: terraform
+
+provisioner:
+  name: terraform
+  variable_files:
+    - testing.tfvars
+
+platforms:
+  - name: ubuntu
+
+verifier:
+  name: awspec
+
+suites:
+  - name: default
+    verifier:
+      patterns:
+      - spec/test_spec.rb

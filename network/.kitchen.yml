@@ -1,0 +1,24 @@
+---
+driver:
+  name: terraform
+
+provisioner:
+  name: terraform
+  variable_files:
+    - test/integration/testing.tfvars
+
+platforms:
+  - name: ubuntu
+
+verifier:
+  name: terraform
+  format: doc
+  groups:
+    - name: default
+      controls:
+        - operating_system
+      hostnames: public_dns
+      username: ubuntu
+
+suites:
+  - name: default
